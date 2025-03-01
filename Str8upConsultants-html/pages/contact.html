@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Str8Up Consultants for straightforward business solutions. Schedule a consultation or reach out to discuss your business needs.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="../styles/utils/variables.css">
+    <link rel="stylesheet" type="text/css" href="../styles/utils/typography.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    
+    <title>Contact Us | Str8Up Consultants</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span>Str8Up Consultants</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./case-studies.html">Case Studies</a></li>
+                <li><a href="./contact.html" class="active cta-button">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero -->
+        <section class="page-hero">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p class="hero-subtitle">Let's start a straightforward conversation about your business goals</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form class="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interest</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="strategic">Strategic Planning</option>
+                                    <option value="operational">Operational Improvement</option>
+                                    <option value="financial">Financial Advisory</option>
+                                    <option value="marketing">Marketing & Branding</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="button-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>Direct Contact</h3>
+                            <ul class="contact-details">
+                                <li>
+                                    <span class="icon">📞</span>
+                                    <span class="detail">
+                                        <strong>Phone</strong><br>
+                                        (555) 123-4567
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="icon">✉️</span>
+                                    <span class="detail">
+                                        <strong>Email</strong><br>
+                                        info@str8upconsultants.com
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Office Location</h3>
+                            <ul class="contact-details">
+                                <li>
+                                    <span class="icon">📍</span>
+                                    <span class="detail">
+                                        <strong>Address</strong><br>
+                                        123 Business Avenue<br>
+                                        Suite 456<br>
+                                        Enterprise City, ST 12345
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="icon">🕒</span>
+                                    <span class="detail">
+                                        <strong>Hours</strong><br>
+                                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                        Weekend: By appointment
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <!-- Same footer content as other pages -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js" defer></script>
+</body>
+</html> 
