@@ -1,0 +1,8 @@
+[build]
+  base = "Str8upConsultants-html"
+  publish = "."
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
