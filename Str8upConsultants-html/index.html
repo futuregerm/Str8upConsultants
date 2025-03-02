@@ -46,17 +46,63 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Straight Talk.<br>Real Results.</h1>
-                <p class="hero-subtitle">Business consulting that cuts through the noise and delivers measurable impact.</p>
-                <div class="cta-group">
-                    <a href="./pages/contact.html" class="button-primary">Schedule a Consultation</a>
-                    <a href="./pages/services.html" class="button-secondary">Explore Our Services</a>
+        <!-- Replace the existing hero section with this -->
+<section class="hero">
+    <div class="hero-carousel">
+        <!-- Carousel Navigation -->
+        <button class="carousel-nav prev" aria-label="Previous slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="carousel-nav next" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-slides">
+            <div class="carousel-slide active" style="background-image: url('./assets/images/hero-1.jpg')">
+                <div class="hero-content">
+                    <h1>Transform Your Business with Clarity</h1>
+                    <p class="hero-subtitle">Strategic solutions that deliver measurable results</p>
+                    <div class="cta-group">
+                        <a href="./pages/contact.html" class="button-primary">Schedule a Consultation</a>
+                        <a href="./pages/services.html" class="button-secondary">Explore Our Services</a>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="carousel-slide" style="background-image: url('./assets/images/hero-2.jpg')">
+                <div class="hero-content">
+                    <h1>Expert Business Consulting</h1>
+                    <p class="hero-subtitle">Practical strategies for sustainable growth</p>
+                    <div class="cta-group">
+                        <a href="./pages/contact.html" class="button-primary">Get Started Today</a>
+                        <a href="./pages/case-studies.html" class="button-secondary">View Case Studies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('./assets/images/hero-3.jpg')">
+                <div class="hero-content">
+                    <h1>Drive Growth & Innovation</h1>
+                    <p class="hero-subtitle">Unlock your business potential with strategic insights</p>
+                    <div class="cta-group">
+                        <a href="./pages/contact.html" class="button-primary">Talk to an Expert</a>
+                        <a href="./pages/about.html" class="button-secondary">Learn About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button class="indicator active" aria-label="Slide 1"></button>
+            <button class="indicator" aria-label="Slide 2"></button>
+            <button class="indicator" aria-label="Slide 3"></button>
+        </div>
+    </div>
+</section>
 
         <!-- Services Overview -->
         <section class="services-overview">
