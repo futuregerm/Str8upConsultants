@@ -135,25 +135,185 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    padding: calc(var(--space-8) * 4) var(--space-4);
-    text-align: center;
-    background-color: #f8fafc;
+    position: relative;
+    padding: 0;
+    height: 70vh;
+    min-height: 300px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);  /* Dark overlay for better text readability */
+}
+
+.carousel-slide.active {
+    opacity: 1;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 var(--space-4);
+    text-align: center;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.hero-subtitle {
-    font-size: var(--text-xl);
-    color: var(--color-secondary);
-    margin-bottom: var(--space-8);
+/* Carousel Navigation */
+.carousel-nav {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    z-index: 3;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(1px);
+}
+
+.carousel-nav.prev {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.carousel-nav.next {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.carousel-nav:hover {
+    width: 100px;
+}
+
+.carousel-nav.prev:hover {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.carousel-nav.next:hover {
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+/* Make the arrow icons more visible */
+.carousel-nav svg {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: var(--space-2);
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.indicator:hover {
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Hero Content Styles */
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+    line-height: 1.2;
+}
+
+.hero-content .hero-subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+    opacity: 0.9;
+}
+
+.cta-group {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-top: var(--space-4);
 }
 
 /* Services Grid */
 .services-overview {
-    padding: var(--space-8) var(--space-4);
+    padding: calc(var(--space-8) * 2) var(--space-4);
 }
 
 .services-grid {
@@ -179,17 +339,30 @@ a:hover {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-4);
+    gap: var(--space-8);
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: var(--space-4);
+    padding: calc(var(--space-8) * 2) var(--space-4);
+}
+
+/* Why Choose Us section */
+.why-choose-us {
+    padding: calc(var(--space-8) * 2) var(--space-4);
+    background-color: #f8fafc;
 }
 
 /* CTA Section */
 .cta-section {
     text-align: center;
-    padding: var(--space-8) var(--space-4);
+    padding: calc(var(--space-8) * 2) var(--space-4);
     background-color: #f8fafc;
+    margin-top: var(--space-8);
+}
+
+/* Add some spacing between section headings and content */
+.services-overview h2,
+.why-choose-us h2 {
+    margin-bottom: calc(var(--space-8) * 1.5);
 }
 
 /* Footer */
@@ -230,11 +403,13 @@ a:hover {
     color: white;
     border-radius: 4px;
     font-weight: 500;
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-fast);
+    border: 2px solid var(--color-primary);
 }
 
 .button-primary:hover {
-    background-color: var(--color-primary-dark);
+    background-color: transparent;
+    color: var(--color-primary);
 }
 
 .button-secondary {
@@ -250,6 +425,29 @@ a:hover {
 .button-secondary:hover {
     background-color: var(--color-primary);
     color: white;
+}
+
+/* Hero-specific button overrides */
+.hero .button-primary {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+}
+
+.hero .button-primary:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.hero .button-secondary {
+    border-color: white;
+    color: white;
+    background-color: transparent;
+}
+
+.hero .button-secondary:hover {
+    background-color: white;
+    color: var(--color-primary);
 }
 
 /* Mobile Menu */
@@ -283,6 +481,31 @@ a:hover {
 
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .carousel-nav {
+        width: 50px;
+    }
+
+    .carousel-nav:hover {
+        width: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: var(--text-base);
+    }
+
+    .cta-group {
+        flex-direction: column;
+        gap: var(--space-2);
     }
 }
 
@@ -636,4 +859,4 @@ h1, h2, h3, h4, h5, h6 {
 .footer-content h4,
 .nav-container h4 {
     text-align: left;
-} 
+}
